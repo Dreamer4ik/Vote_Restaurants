@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <h2> Eat & Enjoy</h2>
   </body>
 </html>
