@@ -7,5 +7,4 @@ log
 *.script
 *.lck
 *.log
-*.tmp
-.gitignore
+voterestaurants.tmp
