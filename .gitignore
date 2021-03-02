@@ -1,10 +1,10 @@
 .idea
 out
 target
+voterestaurants.tmp
 *.iml
 log
 *.patch
 *.script
 *.lck
 *.log
-/voterestaurants.tmp/*
