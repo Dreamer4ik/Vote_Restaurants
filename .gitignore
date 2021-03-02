@@ -4,7 +4,8 @@ target
 *.iml
 log
 *.patch
-*.gitignore
 *.script
 *.lck
 *.log
+voterestaurants.tmp
+*.gitignore
