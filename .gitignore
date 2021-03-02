@@ -9,7 +9,7 @@ log
 *.log
 *.tmp
 tmp
-voterestaurants.tmp
+.idea/voterestaurants.tmp
 voterestaurants.lck
 voterestaurants.log
 voterestaurants.properties
