@@ -4,4 +4,7 @@ target
 *.iml
 log
 *.patch
-
+*.gitignore
+*.script
+*.lck
+*.log
