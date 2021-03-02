@@ -10,5 +10,8 @@ log
 *.tmp
 tmp
 voterestaurants.tmp
-
+voterestaurants.lck
+voterestaurants.log
+voterestaurants.properties
+voterestaurants.script
 
