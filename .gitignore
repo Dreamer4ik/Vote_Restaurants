@@ -7,4 +7,4 @@ log
 *.script
 *.lck
 *.log
-voterestaurants.tmp
+/voterestaurants.tmp/*
