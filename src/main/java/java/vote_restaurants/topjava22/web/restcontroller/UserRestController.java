@@ -6,17 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
+import java.vote_restaurants.topjava22.AuthorizedUser;
 import java.vote_restaurants.topjava22.View;
 import java.vote_restaurants.topjava22.model.User;
 import java.vote_restaurants.topjava22.service.UserService;
 import java.vote_restaurants.topjava22.to.UserTo;
 import java.vote_restaurants.topjava22.util.UserUtil;
 
+import static java.vote_restaurants.topjava22.util.ValidationUtil.assureIdConsistent;
 import static java.vote_restaurants.topjava22.util.ValidationUtil.checkNew;
 
 @RestController
@@ -50,18 +54,17 @@ public class UserRestController {
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    //REFACTORING
-    public void update (@RequestBody UserTo userTo, @PathVariable int id){
-        LOG.info("update {} with id={}", userTo, id);
-        userService.update(userTo);
+    public void update (@Valid @RequestBody User user, @AuthenticationPrincipal AuthorizedUser authUser){
+        LOG.info("update {} with id={}", user , authUser.getId());
+        assureIdConsistent(user, authUser.getId());
+        userService.update(user);
     }
 
     @DeleteMapping("/profile/delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    //REFACTORING
-    public void delete(@PathVariable int id) {
-        LOG.info("delete {}",id);
-        userService.delete(id);
+    public void delete(@AuthenticationPrincipal AuthorizedUser authUser) {
+        LOG.info("delete {}",authUser.getId());
+        userService.delete(authUser.getId());
     }
 
 

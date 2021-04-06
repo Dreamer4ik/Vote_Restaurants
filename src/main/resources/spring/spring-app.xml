@@ -5,6 +5,7 @@
 
 
     <import resource="spring-cache.xml"/>
+    <import resource="spring-security.xml"/>
 
     <context:component-scan base-package="java.vote_restaurants.**.service"/>
 

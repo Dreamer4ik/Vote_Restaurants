@@ -2,6 +2,7 @@ package java.vote_restaurants.topjava22.util;
 
 import java.vote_restaurants.topjava22.HasId;
 import java.vote_restaurants.topjava22.util.exception.IllegalRequestDataException;
+import java.vote_restaurants.topjava22.util.exception.NotFoundException;
 
 public class ValidationUtil {
     public static <T> T checkNotFoundWithId(T object, int id) {
@@ -24,6 +25,12 @@ public class ValidationUtil {
         checkNotFound(object != null, msg);
 
         return object;
+    }
+
+    public static void checkNotFound(boolean found, String msg) {
+        if (!found) {
+            throw new NotFoundException("Not found entity with" + msg);
+        }
     }
 
     public static void checkNew(HasId bean) {
