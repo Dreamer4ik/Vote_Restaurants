@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class AbstractNamedEntity extends AbstractBaseEntity {
 
-    @NotBlank
+
     @Size(min = 2, max = 100)
     @Column(name = "name", nullable = false)
     protected String name;
@@ -18,7 +18,7 @@ public abstract class AbstractNamedEntity extends AbstractBaseEntity {
     protected AbstractNamedEntity() {
     }
 
-    protected AbstractNamedEntity(Integer id, String name) {
+    public AbstractNamedEntity(Integer id, String name) {
         super(id);
         this.name = name;
     }

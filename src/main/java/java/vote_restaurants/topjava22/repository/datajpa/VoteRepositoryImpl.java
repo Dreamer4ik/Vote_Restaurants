@@ -2,6 +2,7 @@ package java.vote_restaurants.topjava22.repository.datajpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -24,6 +25,7 @@ public class VoteRepositoryImpl implements VoteRepository {
 
 
     @Override
+    @Transactional
     public Vote save(Vote vote, int userId, int restaurantId) {
         LocalDate localDateToday = LocalDate.now();
 

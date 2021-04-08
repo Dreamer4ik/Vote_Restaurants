@@ -54,10 +54,10 @@ public class UserRestController {
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update (@Valid @RequestBody User user, @AuthenticationPrincipal AuthorizedUser authUser){
-        LOG.info("update {} with id={}", user , authUser.getId());
-        assureIdConsistent(user, authUser.getId());
-        userService.update(user);
+    public void update (@RequestBody UserTo userTo, @AuthenticationPrincipal AuthorizedUser authUser){
+        LOG.info("update {} with id={}", userTo , authUser.getId());
+        assureIdConsistent(userTo, authUser.getId());
+        userService.update(userTo);
     }
 
     @DeleteMapping("/profile/delete")

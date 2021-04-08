@@ -1,4 +1,6 @@
 package java.vote_restaurants.topjava22.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -35,6 +37,7 @@ public abstract class AbstractBaseEntity implements HasId {
         return id;
     }
 
+    @JsonIgnore
     public boolean isNew() {
         return this.id == null;
     }

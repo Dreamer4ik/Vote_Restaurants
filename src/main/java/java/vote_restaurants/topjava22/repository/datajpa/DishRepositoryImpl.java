@@ -2,6 +2,7 @@ package java.vote_restaurants.topjava22.repository.datajpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.vote_restaurants.topjava22.model.Dish;
@@ -22,6 +23,7 @@ public class DishRepositoryImpl implements DishRepository {
 
 
     @Override
+    @Transactional
     public Dish save(Dish dish, int userId, int restaurantId) {
         if (!dish.isNew() && getDish(dish.getId(), userId, restaurantId) == null) {
             return null;

@@ -8,12 +8,19 @@
 
     <http pattern="/rest/**" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
         <http-basic/>
-        <intercept-url pattern="/rest/users/profile/**" access="hasRole('USER')"/>
-        <intercept-url pattern="/rest/admins/dishes/create" access="hasRole('ADMIN')"/>
-        <intercept-url pattern="/rest/admins/dishes/delete" access="hasRole('ADMIN')"/>
-        <intercept-url pattern="/rest/admins/dishes/**" access="permitAll()"/>
-        <intercept-url pattern="/rest/users/register" access="permitAll()"/>
-        <intercept-url pattern="/rest/admins/votes/create/**" access="hasRole('USER')"/>
+        <intercept-url pattern="/restaurants" method="GET" access="permitAll()"/>
+        <intercept-url pattern="/restaurants/**" method="GET" access="permitAll()"/>
+
+        <intercept-url pattern="/restaurants/dishes/**" method="GET" access="permitAll()"/>
+        <intercept-url pattern="/restaurants/dishes/**" method="DELETE" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/restaurants/dishes/**" method="POST" access="hasRole('ADMIN')"/>
+
+        <intercept-url pattern="/restaurants/votes" method="GET" access="permitAll()"/>
+        <intercept-url pattern="/restaurants/votes/**" method="GET" access="permitAll()"/>
+        <intercept-url pattern="/restaurants/votes/**" method="POST" access="isAuthenticated()"/>
+
+        <intercept-url pattern="/users/profile/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/users/register" access="permitAll()"/>
         <csrf disabled="true"/>
     </http>
 
