@@ -1,6 +1,5 @@
 package java.vote_restaurants.topjava22.model;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import javax.persistence.Column;
