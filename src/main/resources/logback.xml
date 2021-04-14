@@ -18,7 +18,7 @@
         </encoder>
     </appender>
 
-    <logger name="java.vote_restaurants.topjava22" level="DEBUG"/>
+    <logger name="ru.vote_restaurants.topjava22" level="DEBUG"/>
 
     <root level="info">
         <appender-ref ref="file"/>

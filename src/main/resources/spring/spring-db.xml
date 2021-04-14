@@ -18,8 +18,8 @@
         <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
     </jdbc:initialize-database>
 
-    <context:component-scan base-package="java.vote_restaurants.**.repository"/>
-    <jpa:repositories base-package="java.vote_restaurants.**.repository"/>
+    <context:component-scan base-package="ru.vote_restaurants.**.repository"/>
+    <jpa:repositories base-package="ru.vote_restaurants.**.repository"/>
 
     <context:annotation-config/>
 
@@ -32,7 +32,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           p:dataSource-ref="dataSource"
-          p:packagesToScan="java.vote_restaurants.**.model">
+          p:packagesToScan="ru.vote_restaurants.**.model">
 
         <property name="jpaPropertyMap">
             <map>
