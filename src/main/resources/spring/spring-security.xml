@@ -4,7 +4,6 @@
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <http pattern="/resources/**" security="none"/>
     <http pattern="/webjars/**" security="none"/>
 
     <http pattern="/**" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
