@@ -10,7 +10,6 @@ import ru.vote_restaurants.topjava22.util.ValidationUtil;
 import java.time.LocalDate;
 import java.util.List;
 
-import static ru.vote_restaurants.topjava22.util.ValidationUtil.checkNotFoundWithId;
 
 @Service
 public class VoteService {

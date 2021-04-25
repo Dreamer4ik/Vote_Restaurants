@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>ru.vote_restaurants</groupId>
     <artifactId>VOTE_RESTAURANTS</artifactId>
     <packaging>war</packaging>
 
@@ -22,9 +22,9 @@
         <slf4j.version>1.7.30</slf4j.version>
 
         <!-- Spring -->
-        <spring.version>5.2.6.RELEASE</spring.version>
-        <spring-data-jpa.version>2.3.2.RELEASE</spring-data-jpa.version>
-        <spring.security.version>5.3.3.RELEASE</spring.security.version>
+        <spring.version>5.3.0</spring.version>
+        <spring-data-jpa.version>2.4.0</spring-data-jpa.version>
+        <spring.security.version>5.4.5</spring.security.version>
 
         <jackson-json.version>2.11.1</jackson-json.version>
 
@@ -93,7 +93,7 @@
                     </configuration>
                     <deployables>
                         <deployable>
-                            <groupId>org.example</groupId>
+                            <groupId>ru.vote_restaurants</groupId>
                             <artifactId>VOTE_RESTAURANTS</artifactId>
                             <type>war</type>
                             <properties>
